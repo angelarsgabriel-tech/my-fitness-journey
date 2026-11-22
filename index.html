@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#e76f51"><title>My Fitness Journey</title>
+<link rel="manifest" href="manifest.json"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top"><div><span class="eyebrow">SEU ESPAÇO DE BEM-ESTAR</span><h1>My Fitness Journey</h1><p>Pequenos passos, grandes mudanças.</p></div><button id="backupTop" class="outline">Backup</button></header>
+<nav id="nav" aria-label="Navegação principal"><button data-view="home" class="active">Início</button><button data-view="food">Diário alimentar</button><button data-view="plan">Plano nutricional</button><button data-view="settings">Dados & backup</button></nav>
+<main>
+<section id="home" class="view active"><h2>Hoje</h2><div class="cards"><article class="card"><span>Registros alimentares</span><strong id="todayCount">0</strong><small>itens hoje</small></article><article class="card"><span>Último peso</span><strong id="lastWeight">—</strong><small>kg (a registrar)</small></article><article class="card"><span>Plano salvo</span><strong id="planStatus">—</strong><small>da nutricionista</small></article></div><div class="panel"><h3>Resumo de hoje</h3><p id="summary">Seus registros aparecerão aqui.</p><button class="primary" data-goto="food">Adicionar alimentação</button></div><div class="panel"><h3>Minha jornada</h3><p>Use o diário para registrar o que foi orientado pela sua nutricionista. O aplicativo não calcula nem presume valores nutricionais.</p></div></section>
+<section id="food" class="view"><h2>Diário alimentar</h2><form id="foodForm" class="panel"><label>Data e horário<input id="foodDate" type="datetime-local" required></label><label>Refeição<select id="meal"><option>Desjejum</option><option>Lanche da manhã</option><option>Almoço</option><option>Lanche da tarde</option><option>Jantar</option><option>Ceia</option><option>Outro</option></select></label><label>Alimento / preparação<input id="foodName" placeholder="Ex.: omelete" required></label><label>Quantidade / observações<input id="foodAmount" placeholder="Ex.: 2 ovos, sem estimar macros"></label><label>Notas<textarea id="foodNotes" rows="2" placeholder="Observações opcionais"></textarea></label><button class="primary">Salvar registro</button></form><div id="foodList"></div></section>
+<section id="plan" class="view"><h2>Plano da nutricionista</h2><p class="muted">Transcreva ou cole as orientações recebidas. O app não cria metas automaticamente.</p><form id="planForm" class="panel"><label>Plano / orientações<textarea id="planText" rows="8" placeholder="Registre aqui seu plano..."></textarea></label><label>Metas e observações<textarea id="planGoals" rows="4" placeholder="Somente metas informadas pela profissional"></textarea></label><button class="primary">Salvar plano</button></form></section>
+<section id="settings" class="view"><h2>Dados & backup</h2><div class="panel"><p>Seus dados são armazenados localmente neste navegador, no IndexedDB.</p><button id="export" class="primary">Exportar backup JSON</button><label class="file">Restaurar backup JSON<input id="import" type="file" accept=".json,application/json"></label><p class="warning">Restaurar backup substitui os registros locais atuais. Exporte um backup atual antes de restaurar.</p><p id="backupStatus" role="status"></p></div><div class="panel"><h3>Registros</h3><p id="recordsInfo"></p></div></section>
+</main><footer>My Fitness Journey · Dados no seu dispositivo</footer>
+<script src="app.js"></script>
+</body></html>
